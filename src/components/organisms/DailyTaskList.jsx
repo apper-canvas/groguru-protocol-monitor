@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import TaskItem from '@/components/molecules/TaskItem';
 
-const DailyTaskList = ({ tasks, onCompleteTask, onSkipTask }) => {
+const DailyTaskList = ({ tasks, onCompleteTask, onSkipTask, onSetReminder }) => {
   if (tasks.length === 0) {
     return (
       <motion.div
@@ -20,11 +20,12 @@ const DailyTaskList = ({ tasks, onCompleteTask, onSkipTask }) => {
     <div className="space-y-3">
       <AnimatePresence>
         {tasks.map(task => (
-          <TaskItem
+<TaskItem
             key={task.id}
             task={task}
             onComplete={onCompleteTask}
             onSkip={onSkipTask}
+            onSetReminder={onSetReminder}
           />
         ))}
       </AnimatePresence>

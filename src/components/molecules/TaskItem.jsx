@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import Button from '@/components/atoms/Button';
 
-const TaskItem = ({ task, onComplete, onSkip }) => {
+const TaskItem = ({ task, onComplete, onSkip, onSetReminder }) => {
   const getTaskIcon = (type) => {
     switch (type) {
       case 'water': return 'Droplets';
@@ -44,7 +44,15 @@ const TaskItem = ({ task, onComplete, onSkip }) => {
             {task.notes && <p className="text-xs text-surface-500 mt-1">{task.notes}</p>}
           </div>
         </div>
-        <div className="flex space-x-2">
+<div className="flex space-x-2">
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => onSetReminder(task)}
+            className="p-2 rounded-lg bg-surface-100 text-surface-600 hover:bg-surface-200 transition-colors"
+          >
+            <ApperIcon name="Bell" size={16} />
+          </Button>
           <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

@@ -9,6 +9,8 @@ import DailyTaskList from '@/components/organisms/DailyTaskList';
 import Card from '@/components/molecules/Card';
 
 import { plantService } from '@/services';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -35,7 +37,7 @@ const CalendarPage = () => {
     loadTasks();
   }, [currentDate]);
 
-  const handleCompleteTask = async (taskId) => {
+const handleCompleteTask = async (taskId) => {
     try {
       await plantService.completeTask(taskId);
       setTasks(prev => prev.filter(task => task.id !== taskId));
@@ -55,6 +57,60 @@ const CalendarPage = () => {
     }
   };
 
+  const [showReminderModal, setShowReminderModal] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [reminderTime, setReminderTime] = useState(new Date());
+
+  const handleSetReminder = async (task) => {
+    setSelectedTask(task);
+    setReminderTime(task.reminderTime ? new Date(task.reminderTime) : new Date());
+    setShowReminderModal(true);
+  };
+
+  const handleSaveReminder = async () => {
+    if (!selectedTask) return;
+    
+    try {
+      // Request notification permission if not granted
+      if (Notification.permission === 'default') {
+        await Notification.requestPermission();
+      }
+      
+      if (Notification.permission === 'granted') {
+        // Update task with reminder
+        const updatedTask = {
+          ...selectedTask,
+          reminderTime: reminderTime.toISOString(),
+          reminderEnabled: true,
+          reminderSent: false
+        };
+        
+        await plantService.updateTask(selectedTask.id, updatedTask);
+        
+        // Schedule notification
+        const timeUntilReminder = reminderTime.getTime() - Date.now();
+        if (timeUntilReminder > 0) {
+          setTimeout(() => {
+            new Notification(`Plant Care Reminder`, {
+              body: `Time to ${selectedTask.title}`,
+              icon: '/favicon.ico'
+            });
+          }, timeUntilReminder);
+        }
+        
+        // Update local state
+        setTasks(prev => prev.map(t => t.id === selectedTask.id ? updatedTask : t));
+        toast.success('Reminder set successfully!');
+      } else {
+        toast.error('Please enable notifications to set reminders');
+      }
+      
+      setShowReminderModal(false);
+      setSelectedTask(null);
+    } catch (err) {
+      toast.error('Failed to set reminder');
+    }
+  };
   const navigateMonth = (direction) => {
     setCurrentDate(prev => direction === 'next' ? addMonths(prev, 1) : subMonths(prev, 1));
   };
@@ -185,14 +241,81 @@ const CalendarPage = () => {
             </Button>
           </div>
           
-          <DailyTaskList
+<DailyTaskList
             tasks={selectedDayTasks}
             onCompleteTask={handleCompleteTask}
             onSkipTask={handleSkipTask}
+            onSetReminder={handleSetReminder}
           />
         </Card>
       </div>
+
+      {/* Reminder Modal */}
+      <AnimatePresence>
+        {showReminderModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            onClick={() => setShowReminderModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl p-6 m-4 max-w-md w-full"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-surface-900">
+                  Set Reminder
+                </h3>
+                <Button
+                  onClick={() => setShowReminderModal(false)}
+                  className="p-2 hover:bg-surface-100 rounded-lg transition-colors"
+                >
+                  <ApperIcon name="X" size={20} />
+                </Button>
+              </div>
+              
+              <div className="mb-4">
+                <p className="text-surface-600 mb-2">Task: {selectedTask?.title}</p>
+                <label className="block text-sm font-medium text-surface-700 mb-2">
+                  Reminder Time
+                </label>
+                <DatePicker
+                  selected={reminderTime}
+                  onChange={setReminderTime}
+                  showTimeSelect
+                  timeFormat="HH:mm"
+                  timeIntervals={15}
+                  dateFormat="MMMM d, yyyy h:mm aa"
+                  className="w-full p-3 border border-surface-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  minDate={new Date()}
+                />
+              </div>
+              
+              <div className="flex space-x-3">
+                <Button
+                  onClick={() => setShowReminderModal(false)}
+                  className="flex-1 p-3 bg-surface-100 text-surface-700 rounded-lg hover:bg-surface-200 transition-colors"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  onClick={handleSaveReminder}
+                  className="flex-1 p-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Set Reminder
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
+</div>
   );
 };
 
