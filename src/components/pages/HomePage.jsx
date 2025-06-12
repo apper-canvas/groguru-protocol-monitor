@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import ApperIcon from '../components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
-const Home = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   return (
@@ -36,14 +37,14 @@ const Home = () => {
           Your AI-powered gardening companion for healthier, happier plants
         </p>
 
-        <motion.button
+        <Button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate('/dashboard')}
           className="w-full bg-accent text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:bg-accent/90 transition-colors"
         >
           Start Gardening
-        </motion.button>
+        </Button>
 
         <div className="mt-8 grid grid-cols-3 gap-4 text-center">
           <div>
@@ -64,4 +65,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

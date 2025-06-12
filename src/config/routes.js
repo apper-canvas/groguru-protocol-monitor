@@ -1,12 +1,12 @@
-import Home from '../pages/Home';
-import Dashboard from '../pages/Dashboard';
-import Plants from '../pages/Plants';
-import Calendar from '../pages/Calendar';
-import Diagnose from '../pages/Diagnose';
-import Journal from '../pages/Journal';
-import PlantDetail from '../pages/PlantDetail';
-import AddPlant from '../pages/AddPlant';
-import NotFound from '../pages/NotFound';
+import HomePage from '@/components/pages/HomePage';
+import DashboardPage from '@/components/pages/DashboardPage';
+import PlantsPage from '@/components/pages/PlantsPage';
+import CalendarPage from '@/components/pages/CalendarPage';
+import DiagnosePage from '@/components/pages/DiagnosePage';
+import JournalPage from '@/components/pages/JournalPage';
+import PlantDetailPage from '@/components/pages/PlantDetailPage';
+import AddPlantPage from '@/components/pages/AddPlantPage';
+import NotFoundPage from '@/components/pages/NotFoundPage';
 
 export const routes = {
   home: {
@@ -14,7 +14,7 @@ export const routes = {
     label: 'Home',
     path: '/',
     icon: 'Home',
-    component: Home,
+component: HomePage,
     hideInNav: true
   },
   dashboard: {
@@ -22,48 +22,62 @@ export const routes = {
     label: 'Dashboard',
     path: '/dashboard',
     icon: 'LayoutDashboard',
-    component: Dashboard
+    component: DashboardPage
   },
   plants: {
     id: 'plants',
     label: 'My Plants',
     path: '/plants',
     icon: 'Leaf',
-    component: Plants
+    component: PlantsPage
   },
   calendar: {
     id: 'calendar',
     label: 'Calendar',
     path: '/calendar',
     icon: 'Calendar',
-    component: Calendar
+    component: CalendarPage
   },
   diagnose: {
     id: 'diagnose',
     label: 'Diagnose',
     path: '/diagnose',
     icon: 'Search',
-    component: Diagnose
+    component: DiagnosePage
   },
   journal: {
     id: 'journal',
     label: 'Journal',
     path: '/journal',
     icon: 'BookOpen',
-    component: Journal
+    component: JournalPage
   },
   plantDetail: {
     id: 'plantDetail',
     label: 'Plant Detail',
     path: '/plants/:id',
-    component: PlantDetail,
+    component: PlantDetailPage,
     hideInNav: true
   },
   addPlant: {
     id: 'addPlant',
     label: 'Add Plant',
     path: '/add-plant',
-    component: AddPlant,
+    component: AddPlantPage,
+    hideInNav: true
+  },
+addPlant: {
+    id: 'addPlant',
+    label: 'Add Plant',
+    path: '/add-plant',
+    component: AddPlantPage,
+    hideInNav: true
+  },
+  notFound: {
+    id: 'notFound',
+    label: 'Not Found',
+    path: '*',
+    component: NotFoundPage,
     hideInNav: true
   }
 };

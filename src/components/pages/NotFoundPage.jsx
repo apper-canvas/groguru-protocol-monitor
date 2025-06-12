@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import ApperIcon from '../components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -40,27 +41,27 @@ const NotFound = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <motion.button
+          <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/dashboard')}
             className="px-6 py-3 bg-accent text-white rounded-xl font-medium hover:bg-accent/90 transition-colors"
           >
             Go to Dashboard
-          </motion.button>
+          </Button>
           
-          <motion.button
+          <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate(-1)}
             className="px-6 py-3 bg-surface-100 text-surface-700 rounded-xl font-medium hover:bg-surface-200 transition-colors"
           >
             Go Back
-          </motion.button>
+          </Button>
         </div>
       </motion.div>
     </div>
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
