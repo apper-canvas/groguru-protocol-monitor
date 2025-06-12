@@ -107,10 +107,15 @@ const CalendarPage = () => {
   }
 
   return (
-    <div className="max-w-full overflow-hidden p-6">
-      {/* Header */}
+<div className="max-w-full overflow-hidden p-6">
+      {/* Header with Current Date */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="font-heading text-2xl font-bold text-surface-800">Care Calendar</h1>
+        <div>
+          <h1 className="font-heading text-2xl font-bold text-surface-800">Care Calendar</h1>
+          <p className="text-surface-600 text-sm mt-1">
+            Today: {format(new Date(), 'EEEE, MMMM d, yyyy')}
+          </p>
+        </div>
         <div className="flex items-center space-x-2">
           <Button
             whileHover={{ scale: 1.05 }}
@@ -134,49 +139,59 @@ const CalendarPage = () => {
         </div>
       </div>
 
-      {/* Calendar Grid */}
-      <Card className="p-4 shadow-sm mb-6">
-        {/* Days of week header */}
-        <div className="grid grid-cols-7 gap-2 mb-2">
-          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-            <div key={day} className="text-center text-sm font-medium text-surface-600 py-2">
-              {day}
-            </div>
-          ))}
-        </div>
+      {/* Two Column Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Compact Calendar */}
+        <Card className="p-3 shadow-sm">
+          <h3 className="font-semibold text-surface-800 mb-3">Calendar</h3>
+          
+          {/* Days of week header */}
+          <div className="grid grid-cols-7 gap-1 mb-2">
+            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+              <div key={day} className="text-center text-xs font-medium text-surface-600 py-1">
+                {day}
+              </div>
+            ))}
+          </div>
 
-        {/* Calendar days */}
-        <div className="grid grid-cols-7 gap-2">
-          {calendarDays.map(date => (
-            <CalendarDayCell
-              key={date.toISOString()}
-              date={date}
-              tasks={tasks}
-              isSelected={isSameDay(date, selectedDate)}
-              isCurrentMonth={true}
-              onClick={setSelectedDate}
-            />
-          ))}
-        </div>
-      </Card>
+          {/* Calendar days - more compact */}
+          <div className="grid grid-cols-7 gap-1">
+            {calendarDays.map(date => (
+              <CalendarDayCell
+                key={date.toISOString()}
+                date={date}
+                tasks={tasks}
+                isSelected={isSameDay(date, selectedDate)}
+                isCurrentMonth={true}
+                onClick={setSelectedDate}
+              />
+            ))}
+          </div>
+        </Card>
 
-      {/* Selected Day Tasks */}
-      <Card className="p-6 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-heading text-lg font-semibold text-surface-800">
-            {isToday(selectedDate) ? 'Today' : format(selectedDate, 'EEEE, MMMM d')}
-          </h3>
-          <span className="text-sm text-surface-600">
-            {selectedDayTasks.length} task{selectedDayTasks.length !== 1 ? 's' : ''}
-          </span>
-        </div>
-
-        <DailyTaskList
+        {/* Daily Tasks for Selected Date */}
+        <Card className="p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-semibold text-surface-800">
+              Tasks for {format(selectedDate, 'MMMM d')}
+              {isToday(selectedDate) && <span className="text-primary-600 ml-1">(Today)</span>}
+            </h3>
+            <Button
+              onClick={() => toast.info('Add task feature coming soon')}
+              className="text-sm bg-primary-600 text-white hover:bg-primary-700 px-3 py-1"
+            >
+              <ApperIcon name="Plus" size={16} className="mr-1" />
+              Add Task
+            </Button>
+          </div>
+          
+          <DailyTaskList
             tasks={selectedDayTasks}
             onCompleteTask={handleCompleteTask}
             onSkipTask={handleSkipTask}
-        />
-      </Card>
+          />
+        </Card>
+      </div>
     </div>
   );
 };
