@@ -1,0 +1,84 @@
+[
+  {
+    "id": "entry-1",
+    "plantId": "plant-1",
+    "type": "milestone",
+    "title": "New growth spotted!",
+    "notes": "Sunny has produced 3 new leaves this week. The growth rate has really picked up since moving it to the brighter spot.",
+    "date": "2024-12-20T00:00:00Z",
+    "photos": [
+      {
+        "id": "journal-photo-1",
+        "url": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&h=300&fit=crop",
+        "capturedAt": "2024-12-20T00:00:00Z"
+      }
+    ],
+    "measurements": {
+      "height": "35",
+      "width": "28",
+      "leaves": "24"
+    }
+  },
+  {
+    "id": "entry-2",
+    "plantId": "plant-2",
+    "type": "problem",
+    "title": "Yellowing leaves noticed",
+    "notes": "Found 2 yellowing leaves at the bottom of Jade Beauty. Might be overwatering. Will reduce watering frequency and monitor closely.",
+    "date": "2024-12-18T00:00:00Z",
+    "photos": [],
+    "measurements": {}
+  },
+  {
+    "id": "entry-3",
+    "plantId": "plant-4",
+    "type": "harvest",
+    "title": "First basil harvest!",
+    "notes": "Harvested enough basil for tonight's pasta sauce. The aroma is incredible - so much better than store-bought!",
+    "date": "2024-12-17T00:00:00Z",
+    "photos": [
+      {
+        "id": "journal-photo-3",
+        "url": "https://images.unsplash.com/photo-1591018811726-0e2cea0d2b6e?w=300&h=300&fit=crop",
+        "capturedAt": "2024-12-17T00:00:00Z"
+      }
+    ],
+    "measurements": {
+      "height": "22",
+      "leaves": "45"
+    }
+  },
+  {
+    "id": "entry-4",
+    "plantId": "plant-3",
+    "type": "note",
+    "title": "Repotting completed",
+    "notes": "Successfully repotted Monstera Mike into a larger pot with fresh soil mix. Added some perlite for better drainage. He's looking much happier already!",
+    "date": "2024-12-15T00:00:00Z",
+    "photos": [],
+    "measurements": {
+      "height": "68",
+      "width": "45"
+    }
+  },
+  {
+    "id": "entry-5",
+    "plantId": "plant-5",
+    "type": "photo",
+    "title": "Weekly progress photo",
+    "notes": "Peaceful Lily is thriving in the bathroom. The humidity from showers seems to be perfect for it.",
+    "date": "2024-12-14T00:00:00Z",
+    "photos": [
+      {
+        "id": "journal-photo-5",
+        "url": "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=300&h=300&fit=crop",
+        "capturedAt": "2024-12-14T00:00:00Z"
+      }
+    ],
+    "measurements": {
+      "height": "42",
+      "width": "38",
+      "leaves": "18"
+    }
+  }
+]

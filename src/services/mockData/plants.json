@@ -1,0 +1,112 @@
+[
+  {
+    "id": "plant-1",
+    "userId": "user-1",
+    "speciesId": "species-1",
+    "nickname": "Sunny",
+    "location": "Living room window",
+    "plantedDate": "2024-01-15T00:00:00Z",
+    "healthStatus": "healthy",
+    "healthScore": 92,
+    "waterLevel": 78,
+    "lightLevel": 85,
+    "temperature": 22,
+    "lastWatered": "2024-12-20T10:30:00Z",
+    "lastFertilized": "2024-12-15T00:00:00Z",
+    "photos": [
+      {
+        "id": "photo-1",
+        "url": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop",
+        "capturedAt": "2024-12-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "plant-2",
+    "userId": "user-1",
+    "speciesId": "species-2",
+    "nickname": "Jade Beauty",
+    "location": "Kitchen counter",
+    "plantedDate": "2024-02-28T00:00:00Z",
+    "healthStatus": "needs-attention",
+    "healthScore": 67,
+    "waterLevel": 45,
+    "lightLevel": 70,
+    "temperature": 20,
+    "lastWatered": "2024-12-18T00:00:00Z",
+    "lastFertilized": null,
+    "photos": [
+      {
+        "id": "photo-2",
+        "url": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=400&fit=crop",
+        "capturedAt": "2024-12-18T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "plant-3",
+    "userId": "user-1",
+    "speciesId": "species-3",
+    "nickname": "Monstera Mike",
+    "location": "Corner of bedroom",
+    "plantedDate": "2024-03-10T00:00:00Z",
+    "healthStatus": "healthy",
+    "healthScore": 88,
+    "waterLevel": 82,
+    "lightLevel": 75,
+    "temperature": 23,
+    "lastWatered": "2024-12-19T00:00:00Z",
+    "lastFertilized": "2024-12-10T00:00:00Z",
+    "photos": [
+      {
+        "id": "photo-3",
+        "url": "https://images.unsplash.com/photo-1525083900723-51e0d8b5dc68?w=400&h=400&fit=crop",
+        "capturedAt": "2024-12-19T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "plant-4",
+    "userId": "user-1",
+    "speciesId": "species-4",
+    "nickname": "Basil Buddy",
+    "location": "Kitchen herb garden",
+    "plantedDate": "2024-04-05T00:00:00Z",
+    "healthStatus": "healthy",
+    "healthScore": 95,
+    "waterLevel": 90,
+    "lightLevel": 95,
+    "temperature": 24,
+    "lastWatered": "2024-12-21T08:00:00Z",
+    "lastFertilized": "2024-12-16T00:00:00Z",
+    "photos": [
+      {
+        "id": "photo-4",
+        "url": "https://images.unsplash.com/photo-1591018811726-0e2cea0d2b6e?w=400&h=400&fit=crop",
+        "capturedAt": "2024-12-21T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "plant-5",
+    "userId": "user-1",
+    "speciesId": "species-5",
+    "nickname": "Peaceful Lily",
+    "location": "Bathroom shelf",
+    "plantedDate": "2024-05-20T00:00:00Z",
+    "healthStatus": "healthy",
+    "healthScore": 85,
+    "waterLevel": 75,
+    "lightLevel": 60,
+    "temperature": 21,
+    "lastWatered": "2024-12-20T00:00:00Z",
+    "lastFertilized": "2024-12-12T00:00:00Z",
+    "photos": [
+      {
+        "id": "photo-5",
+        "url": "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=400&h=400&fit=crop",
+        "capturedAt": "2024-12-20T00:00:00Z"
+      }
+    ]
+  }
+]

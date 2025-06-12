@@ -1,0 +1,52 @@
+[
+  {
+    "id": "task-1",
+    "plantId": "plant-2",
+    "type": "water",
+    "title": "Water Jade Beauty",
+    "scheduledDate": "2024-12-22T09:00:00Z",
+    "completedDate": null,
+    "weatherAdjusted": false,
+    "notes": "Soil looks dry, check moisture level first"
+  },
+  {
+    "id": "task-2",
+    "plantId": "plant-1",
+    "type": "fertilize",
+    "title": "Fertilize Sunny",
+    "scheduledDate": "2024-12-22T10:00:00Z",
+    "completedDate": null,
+    "weatherAdjusted": false,
+    "notes": "Use diluted liquid fertilizer"
+  },
+  {
+    "id": "task-3",
+    "plantId": "plant-3",
+    "type": "prune",
+    "title": "Remove dead leaves from Monstera Mike",
+    "scheduledDate": "2024-12-22T14:00:00Z",
+    "completedDate": null,
+    "weatherAdjusted": false,
+    "notes": "Check for yellowing or brown leaves"
+  },
+  {
+    "id": "task-4",
+    "plantId": "plant-4",
+    "type": "water",
+    "title": "Water Basil Buddy",
+    "scheduledDate": "2024-12-22T08:00:00Z",
+    "completedDate": null,
+    "weatherAdjusted": true,
+    "notes": "Rain expected later, adjust timing"
+  },
+  {
+    "id": "task-5",
+    "plantId": "plant-5",
+    "type": "water",
+    "title": "Check Peace Lily moisture",
+    "scheduledDate": "2024-12-22T16:00:00Z",
+    "completedDate": null,
+    "weatherAdjusted": false,
+    "notes": "Likes consistent moisture"
+  }
+]

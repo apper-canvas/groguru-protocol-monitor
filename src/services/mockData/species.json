@@ -1,0 +1,97 @@
+[
+  {
+    "id": "species-1",
+    "scientificName": "Epipremnum aureum",
+    "commonNames": ["Golden Pothos", "Devil's Ivy", "Money Plant"],
+    "family": "Araceae",
+    "careProfile": {
+      "watering": "Water when top inch of soil is dry",
+      "light": "Bright, indirect light",
+      "temperature": "18-29°C",
+      "humidity": "40-50%",
+      "fertilizing": "Monthly during growing season",
+      "soil": "Well-draining potting mix"
+    },
+    "hardinessZones": ["10", "11", "12"],
+    "companionPlants": ["Monstera", "Philodendron", "Snake Plant"],
+    "growthRate": "fast",
+    "toxicity": "toxic to pets",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "species-2",
+    "scientificName": "Crassula ovata",
+    "commonNames": ["Jade Plant", "Money Tree", "Lucky Plant"],
+    "family": "Crassulaceae",
+    "careProfile": {
+      "watering": "Water deeply but infrequently, allow soil to dry completely",
+      "light": "Bright, direct light preferred",
+      "temperature": "18-24°C",
+      "humidity": "30-50%",
+      "fertilizing": "Every 2-3 months in growing season",
+      "soil": "Cactus/succulent mix with good drainage"
+    },
+    "hardinessZones": ["9", "10", "11"],
+    "companionPlants": ["Aloe Vera", "Echeveria", "String of Pearls"],
+    "growthRate": "slow",
+    "toxicity": "mildly toxic",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "species-3",
+    "scientificName": "Monstera deliciosa",
+    "commonNames": ["Swiss Cheese Plant", "Split-leaf Philodendron"],
+    "family": "Araceae",
+    "careProfile": {
+      "watering": "Water when top 1-2 inches of soil are dry",
+      "light": "Bright, indirect light",
+      "temperature": "20-30°C",
+      "humidity": "50-70%",
+      "fertilizing": "Monthly during spring and summer",
+      "soil": "Well-draining, peat-based mix"
+    },
+    "hardinessZones": ["10", "11", "12"],
+    "companionPlants": ["Pothos", "Bird of Paradise", "Rubber Plant"],
+    "growthRate": "moderate to fast",
+    "toxicity": "toxic to pets",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "species-4",
+    "scientificName": "Ocimum basilicum",
+    "commonNames": ["Sweet Basil", "Genovese Basil"],
+    "family": "Lamiaceae",
+    "careProfile": {
+      "watering": "Keep soil consistently moist but not waterlogged",
+      "light": "6-8 hours of direct sunlight daily",
+      "temperature": "20-25°C",
+      "humidity": "45-65%",
+      "fertilizing": "Every 2-3 weeks with balanced fertilizer",
+      "soil": "Rich, well-draining potting mix"
+    },
+    "hardinessZones": ["9", "10", "11"],
+    "companionPlants": ["Tomatoes", "Peppers", "Oregano"],
+    "growthRate": "fast",
+    "toxicity": "safe for consumption",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "species-5",
+    "scientificName": "Spathiphyllum wallisii",
+    "commonNames": ["Peace Lily", "White Sails"],
+    "family": "Araceae",
+    "careProfile": {
+      "watering": "Water when top inch feels dry, likes consistent moisture",
+      "light": "Low to medium, indirect light",
+      "temperature": "18-27°C",
+      "humidity": "50-60%",
+      "fertilizing": "Monthly during growing season",
+      "soil": "Well-draining, peat-based mix"
+    },
+    "hardinessZones": ["10", "11", "12"],
+    "companionPlants": ["Boston Fern", "Dracaena", "Chinese Evergreen"],
+    "growthRate": "moderate",
+    "toxicity": "toxic to pets",
+    "difficulty": "beginner"
+  }
+]

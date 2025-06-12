@@ -1,0 +1,52 @@
+{
+  "location": "Your Area",
+  "temperature": 24,
+  "condition": "sunny",
+  "humidity": 65,
+  "sunlightHours": 8.5,
+  "frostRisk": false,
+  "uvIndex": 6,
+  "precipitation": 0,
+  "windSpeed": 12,
+  "forecast": [
+    {
+      "date": "2024-12-22",
+      "high": 26,
+      "low": 18,
+      "condition": "sunny",
+      "precipitation": 0,
+      "humidity": 60
+    },
+    {
+      "date": "2024-12-23",
+      "high": 23,
+      "low": 16,
+      "condition": "cloudy",
+      "precipitation": 10,
+      "humidity": 75
+    },
+    {
+      "date": "2024-12-24",
+      "high": 21,
+      "low": 14,
+      "condition": "rainy",
+      "precipitation": 80,
+      "humidity": 85
+    },
+    {
+      "date": "2024-12-25",
+      "high": 25,
+      "low": 17,
+      "condition": "sunny",
+      "precipitation": 5,
+      "humidity": 55
+    }
+  ],
+  "alerts": [
+    {
+      "type": "watering",
+      "message": "Perfect weather for outdoor watering today!",
+      "priority": "low"
+    }
+  ]
+}
